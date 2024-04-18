@@ -143,7 +143,7 @@ export function Movie({ movie }) {
           <hr className="m-10"></hr>
 
           
-          <p className="mb-5 text-gray-300">
+          <p className="mb-5 text-gray-300 ml-10">
             <span className="text-xl text-red-600">Total review: </span>
             {reviews?.length}
           </p>
@@ -156,7 +156,7 @@ export function Movie({ movie }) {
 
            
 
-            <div className=" ml-32">
+            <div className=" ml-32 mt-[-4rem]">
               <RenderForm reviewAdded={reviewAdded} />
             </div>
           </div>
