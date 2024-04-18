@@ -51,7 +51,7 @@ export function Movie({ movie }) {
           className="border rounded-lg p-4 w-full bg-gray-900 text-white shadow-lg mt-4"
         >
           <div className="lg:flex">
-            <div className="lg:w-1/3 lg:pr-4 lg:mt-10 lg:ml-5 w-full flex justify-center lg:justify-start">
+            <div className="lg:w-1/3 lg:pr-4 mt-10 lg:ml-5 w-full flex justify-center lg:justify-start">
               <img
                 src={`https://image.tmdb.org/t/p/w300${movie.poster}`}
                 alt={movie.title}
@@ -66,7 +66,7 @@ export function Movie({ movie }) {
 
             <div className="lg:w-2/4 pl-4 mt-10 lg:ml-6 md:m-10 sm:m-10">
               <h2
-                className="text-center lg:text-left font-bold text-red-600 text-4xl lg:mb-8 mb-14"
+                className="text-center lg:text-left font-bold text-red-600 lg:text-4xl text-2xl lg:mb-8 mb-14"
                 style={{ fontFamily: "Cinzel, serif" }}
               >
                 {movie.title}
@@ -151,7 +151,7 @@ export function Movie({ movie }) {
             {reviews?.length}
           </p>
           <div className="lg:ml-10 lg:flex ">
-            <div className="lg:w-[36%] w-2/4 ">
+            <div className="lg:w-[36%] w-5/6 ">
               {reviews?.map((review) => (
                 <DisplayReview review={review} key={review?.id} />
               ))}

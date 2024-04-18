@@ -10,7 +10,7 @@ export function RenderForm({reviewAdded}) {
   return (
     <>
     <p className="text-2xl font-bold text-red-600" style={{ fontFamily: "Cinzel, serif" }}>Reviews:</p>
-    <form className="mt-2 flex items-center space-y-2 py-2 rounded shadow-md w-full ">
+    <form className="mt-2 lg:flex items-center space-y-2 py-2 rounded shadow-md w-full ">
         
       <div className="mr-5">
       <textarea
