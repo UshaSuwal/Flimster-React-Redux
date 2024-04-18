@@ -1,6 +1,10 @@
 import { useState } from "react";
 
+
 export function RenderForm({reviewAdded}) {
+
+
+
   const [comment, setComment] = useState("");
 
   return (
@@ -16,6 +20,7 @@ export function RenderForm({reviewAdded}) {
         className="w-full mr-28 p-2 border-black rounded focus:outline-none focus:border-blue-500 text-white bg-gray-700"
       />
       </div>
+
 
       <button
       className="button bg-red-700 hover:bg-red-600 px-4 py-2 border-black rounded-lg"

@@ -2,7 +2,14 @@ import { RenderForm } from "./RenderForm";
 import { DisplayReview } from "./DisplayReview";
 import { useEffect, useState } from "react";
 
+
+import { useDispatch, useSelector } from "react-redux";
+import {addReview } from "../redux/actions/movieActions";
+
 export function Movie({ movie }) {
+
+  const newReview= useSelector((state)=> state?.movie.reviews);
+  const dispatch= useDispatch();
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
@@ -29,24 +36,24 @@ export function Movie({ movie }) {
       cache: "default",
     }).then((response) => {
       if (response.ok) {
-        setReviews([
-          ...reviews,
-          {
-            description: reviewText,
-          },
-        ]);
+
+        const reviewAdd = {
+          id: movie.mid,
+          description: reviewText,
+        };
+        dispatch(addReview(reviewAdd));
         setComment("")
       }
     });
   }
 
+
+
   return (
     <>
       <div className="mt-[5rem] mx-10">
-        <div
-          key={movie.id}
-          className="border rounded-lg p-4 w-full bg-gray-900 text-white shadow-lg mt-4"
-        >
+        <div key={movie.id} className="border rounded-lg p-4 w-full bg-gray-900 text-white shadow-lg mt-4">
+          
           <div className="flex">
             <div className="w-1/3 pr-4 mt-10 ml-5">
               <img
@@ -132,6 +139,7 @@ export function Movie({ movie }) {
               </p>
             </div>
           </div>
+
           <hr className="m-10"></hr>
 
           
@@ -145,6 +153,8 @@ export function Movie({ movie }) {
                 <DisplayReview review={review} key={review?.id} />
               ))}
             </div>
+
+           
 
             <div className=" ml-32">
               <RenderForm reviewAdded={reviewAdded} />
