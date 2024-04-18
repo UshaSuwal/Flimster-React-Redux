@@ -2,14 +2,11 @@ import { RenderForm } from "./RenderForm";
 import { DisplayReview } from "./DisplayReview";
 import { useEffect, useState } from "react";
 
-
 import { useDispatch, useSelector } from "react-redux";
-import {addReview } from "../redux/actions/movieActions";
+import { addReview } from "../redux/actions/movieActions";
 
 export function Movie({ movie }) {
-
-  const newReview= useSelector((state)=> state?.movie.reviews);
-  const dispatch= useDispatch();
+  const dispatch = useDispatch();
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
@@ -36,13 +33,12 @@ export function Movie({ movie }) {
       cache: "default",
     }).then((response) => {
       if (response.ok) {
-
         const reviewAdd = {
           id: movie.mid,
           description: reviewText,
         };
         dispatch(addReview(reviewAdd));
-        setComment("")
+        setComment("");
       }
     });
   }
