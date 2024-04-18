@@ -24,6 +24,8 @@ const movieReducer = (state = initialState, action) => {
             : m
         ),
       };
+    default:
+      return state;
   }
 
 

@@ -2,7 +2,7 @@ import { RenderForm } from "./RenderForm";
 import { DisplayReview } from "./DisplayReview";
 import { useEffect, useState } from "react";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { addReview } from "../redux/actions/movieActions";
 
 export function Movie({ movie }) {

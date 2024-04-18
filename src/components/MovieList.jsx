@@ -16,7 +16,7 @@ export function MovieList() {
     fetch("http://localhost:3000/api/v1/movies/all/movie_reviews")
       .then((response) => response.json())
       .then((data) => dispatch(fetchMovieRequest(data)));
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
